@@ -1,0 +1,59 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@tinymce/tinymce-react": "^3.6.0",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.3",
+    "classnames": "^2.2.6",
+    "dotenv": "^8.2.0",
+    "formik": "^2.1.5",
+    "history": "^4.10.1",
+    "html-react-parser": "^0.13.0",
+    "is-empty": "^1.2.0",
+    "isomorphic-fetch": "^3.0.0",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.19",
+    "moment": "^2.29.0",
+    "react": "^16.13.1",
+    "react-bootstrap": "^1.4.0",
+    "react-dom": "^16.13.1",
+    "react-dropzone": "^11.0.2",
+    "react-google-recaptcha": "^2.1.0",
+    "react-helmet": "^6.1.0",
+    "react-quiz-component": "^0.3.5",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.4",
+    "redux": "^4.0.5",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.0",
+    "tinymce": "^5.4.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "npm": "6.14.4",
+    "node": "12.17.0"
+  }
+}
