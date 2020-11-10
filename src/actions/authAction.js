@@ -28,6 +28,7 @@ export const registerUser = (userData, history) => dispatch => {
 
 // Login - get user token
 export const loginUser = (userData, history) => dispatch => {
+    console.log("user data",userData)
     axios
         .post("/api/login", qs.stringify(userData))
         .then(res => {
@@ -35,15 +36,11 @@ export const loginUser = (userData, history) => dispatch => {
             const { token } = res.data;
             // Decode token to get user data
             const decoded = jwt_decode(token);
-            if (decoded.emailVerify === false) {
-                history.push("/verifyemail", decoded)
-            } else {
-                localStorage.setItem("jwtToken", token);
-                // Set token to Auth header
-                setAuthToken(token);
-                // Set current user
-                dispatch(setCurrentUser(decoded));
-            }
+            localStorage.setItem("jwtToken", token);
+            // Set token to Auth header
+            setAuthToken(token);
+            // Set current user
+            dispatch(setCurrentUser(decoded));
         })
         .catch(err =>
             dispatch({

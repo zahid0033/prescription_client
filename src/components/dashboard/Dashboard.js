@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import logoutUser from "../../actions/logoutAction";
-import MyLiveClass from "./MyLiveClass";
 import Breadcrumbs from "../layout/Breadcrumbs";
 
 class Dashboard extends Component {
@@ -16,8 +15,8 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     return (
       <div>
-        <Breadcrumbs title={user.name.split(" ")[0]} description="Dashboard" />
-        <div>
+        {/*<Breadcrumbs title={user.name.split(" ")[0]} description="Dashboard" />*/}
+        <div className="container">
           <div className="row">
             <div className="col s12 center-align ">
               <h4>
@@ -34,24 +33,8 @@ class Dashboard extends Component {
                 View All Live Classes
                 <i className="material-icons left">arrow_forward</i>
               </Link>
-              <div className="container">
-                <MyLiveClass
-                  history={this.props.history}
-                  studentId={this.props.auth.user.id}
-                />
-              </div>
-              <button
-                style={{
-                  width: "150px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem",
-                }}
-                onClick={this.onLogoutClick}
-                className="btn btn-large waves-effect waves-light hoverable blue darken-1"
-              >
-                Logout
-              </button>
+              <p>Heyyy, We are the one who did this.</p>
+
             </div>
           </div>
         </div>

@@ -14,10 +14,10 @@ import Login from "./components/auth/Login";
 import About from "./components/about/About";
 import Navbar from "./components/layout/Navbars";
 import Footer from "./components/layout/Footer";
+import Dashboard from "./components/dashboard/Dashboard";
 import ForgotPass from "./components/forgotPass/ForgotPass";
 import Contact from "./components/contact/Contact";
-import Mentors from "./components/landing/Mentors";
-import MentorsDetails from "./components/landing/MentorsDetails";
+import ComingSoon from "./components/comingSoon/ComingSoon";
 
 export default function PathRoute() {
   return (
@@ -33,10 +33,10 @@ export default function PathRoute() {
           <Route exact path="/forgotpass" component={ForgotPass} />
           <Route exact path="/about" component={About} />
           <Route exact path="/contactus" component={Contact} />
-          <Route exact path="/mentors" component={Mentors} />
-          <Route exact path="/mentors/details/:id" component={MentorsDetails} />
 
           <PrivateRoute exact path="/patient" component={Patient} />
+          <PrivateRoute exact path="/dashboard" component={Dashboard} />
+
         </main>
         <Footer />
       </React.Fragment>

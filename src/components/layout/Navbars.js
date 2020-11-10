@@ -73,12 +73,12 @@ class Navbars extends Component {
                                     {
                                         this.props.auth.user.type === 'student' ?
                                             <>
-                                                <Nav.Link className="text-white" href="/patient">Patients</Nav.Link>
+                                                <Nav.Link className="text-white" href="#"><UserIcon /></Nav.Link>
                                             </>
                                             :
                                             ''
                                     }
-                                    <li><UserIcon /></li>
+
                                 </>
                                 :
                                 <>
@@ -87,7 +87,6 @@ class Navbars extends Component {
                             }
                         </Nav>
                     </Navbar>
-
 
                 </div>
             </header>

@@ -29,31 +29,31 @@ class Landing extends Component {
       <div>
         {/*<HeaderImg />*/}
         {/*user registration*/}
-        <div className="text-center" style={{ backgroundImage: `url(${children})`, backgroundSize:"cover",   backgroundPosition: "0px -75px", padding: "25px 0" }}>
-          <div className="container">
-            <h2 className="mb-5"> Dear Doctors, Greetings from<b> <span className="medi">Prescription</span><span className="bee">BEE</span></b> </h2>
-            <p className="mb-4">Prescription is online education platform where we disseminate contemporary knowledge through live classroom , training and video based courses.</p>
-            <p>Prescription একটি অনলাইন শিক্ষামূলক প্ল্যাটফর্ম। আমাদের মূল লক্ষ্য হল একটি ইউনিফাইড প্ল্যাটফর্মে শিক্ষার্থী এবং প্রফেশনালদের একত্রিত করা।</p>
+        <div className="text-center" style={{ backgroundImage: `url(${children})`, backgroundSize:"cover",   backgroundPosition: "0px -75px"}}>
+          <div style={{ background: "#d6d6d699", padding: "40px"}}>
+            <div className="container">
+              <h2 className="mb-5"> Dear Doctors, Greetings from<b> <span className="medi">Prescription</span><span className="bee">BEE</span></b> </h2>
+              <p className="mb-4">Prescription is online education platform where we disseminate contemporary knowledge through live classroom , training and video based courses.</p>
+              <p>Prescription একটি অনলাইন শিক্ষামূলক প্ল্যাটফর্ম। আমাদের মূল লক্ষ্য হল একটি ইউনিফাইড প্ল্যাটফর্মে শিক্ষার্থী এবং প্রফেশনালদের একত্রিত করা।</p>
 
-            <h4 className="mb-5">Register Now</h4>
-            <div style={{ justifyContent: "space-evenly" }} className="row">
-              <div className="col-sm-6 col-md-6">
-                <Link to="/register" style={{ margin: "10px", width: "140px", borderRadius: "3px", letterSpacing: "1.5px" }} className="btn btn-primary ">
-                  Register
-                </Link>
-              </div>
-              <div className="col-sm-6 col-md-6">
-                <Link to="/login" style={{ margin: "10px", width: "140px", borderRadius: "3px", letterSpacing: "1.5px" }} className="btn btn-danger">
-                  Log In
-                    </Link>
+              <h4 className="mb-5">Register Now</h4>
+              <div style={{ justifyContent: "space-evenly" }} className="row">
+                <div className="col-sm-6 col-md-6">
+                  <Link to="/register" style={{ margin: "10px", width: "140px", borderRadius: "3px", letterSpacing: "1.5px" }} className="btn btn-primary ">
+                    Register
+                  </Link>
+                </div>
+                <div className="col-sm-6 col-md-6">
+                  <Link to="/login" style={{ margin: "10px", width: "140px", borderRadius: "3px", letterSpacing: "1.5px" }} className="btn btn-danger">
+                    Log In
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
         </div>
         {/*user registration end*/}
         <div>
-
-
           <div className="">
             <section id="team" className="pb-5">
               <div className="container">
@@ -112,9 +112,9 @@ class Landing extends Component {
                               <p className="card-text">Before Managing this software you have to login first</p>
                               <ul className="list-inline">
                                 <li className="list-inline-item">
-                                  <a className="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                  <Link to="/patient">
                                     <i className="fas fa-3x fa-arrow-circle-right"></i>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>

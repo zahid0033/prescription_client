@@ -8,7 +8,7 @@ export class ComingSoon extends Component {
                 <div style={{ minHeight: "70vh" }} className="container valign-wrapper">
                     <div className="valign">
                         <h3>
-                            Coming Soon ...
+                            404 Page Not Found
                         </h3>
                     </div>
                 </div>

@@ -1,9 +1,8 @@
-import React, { Component } from 'react'
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import logoutUser from "../../actions/logoutAction";
-// import M from "materialize-css";
+import {NavDropdown} from "react-bootstrap";
 
 export class UserIcon extends Component {
     onLogoutClick = e => {
@@ -12,21 +11,14 @@ export class UserIcon extends Component {
     };
     componentDidMount() {
         var elems = document.querySelectorAll('.dropdown-trigger');
-        // M.Dropdown.init(elems, {
-        //     coverTrigger: false,
-        // });
     }
     render() {
         return (
             <>
-                <Link to="/" data-target="nav-dropdown" className="btn-floating dropdown-trigger btn-large waves-effect waves-light red darken-1">
-                    <b style={{ textAlign: "center", fontSize: "150%", textJustify: "center" }}>
-                        {this.props.auth.user.name.charAt(0).toUpperCase()}
-                    </b>
-                </Link>
-                <ul id='nav-dropdown' className='dropdown-content'>
-                    <li><button className="btn-flat" onClick={this.onLogoutClick}>Logout</button></li>
-                </ul>
+                <NavDropdown title={this.props.auth.user.name} id="basic-nav-dropdown">
+                    <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
+                    <NavDropdown.Item onClick={this.onLogoutClick}>Logout</NavDropdown.Item>
+                </NavDropdown>
             </>
         )
     }
