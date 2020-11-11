@@ -80,9 +80,9 @@ class Landing extends Component {
                               <p className="card-text">Before running this software you can check our youtube videos </p>
                               <ul className="list-inline">
                                 <li className="list-inline-item">
-                                  <a className="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                  <Link className="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
                                     <i className="fas fa-3x fa-arrow-circle-right"></i>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
@@ -144,9 +144,9 @@ class Landing extends Component {
                               <p className="card-text">Before running this software you can check our youtube videos </p>
                               <ul className="list-inline">
                                 <li className="list-inline-item">
-                                  <a className="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
+                                  <Link className="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
                                     <i className="fas fa-3x fa-arrow-circle-right"></i>
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
