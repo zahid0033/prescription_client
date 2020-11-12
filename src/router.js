@@ -6,7 +6,8 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 import PrivateRouteMentor from "./components/private-route/PrivateRouteMentor";
 import PrivateRouteAdmin from "./components/private-route/PrivateRouteAdmin";
 
-import Patient from "./components/patient/Patient"
+import Patient from "./components/patient/Patient";
+import PatientDetails from "./components/patient/PatientDetails";
 
 import Landing from "./components/landing/Landing";
 import Register from "./components/auth/Register";
@@ -35,6 +36,7 @@ export default function PathRoute() {
           <Route exact path="/contactus" component={Contact} />
 
           <PrivateRoute exact path="/patient" component={Patient} />
+          <PrivateRoute exact path="/patient/:id" component={PatientDetails} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
         </main>

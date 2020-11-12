@@ -18,12 +18,13 @@ class Patient extends Component {
 
 
     componentDidMount() {
-        this.getAllPatient()
+        this.getAllPatient();
     }
 
     onRowClick(data) {
         console.log("filter",data)
-        alert(`You clicked on the row ${data._id}`);
+        // this.props.history.push(`/patient/${data._id}`);
+        // this.props.location(`/patient/${data._id}`)
     }
 
     populateTable = () => {
@@ -40,7 +41,8 @@ class Patient extends Component {
             table: 'table-striped table-hover table-bordered',
             theadCol: css`
                 .table-datatable__root & {
-                  &.sortable:hover {
+                  &.sortable {
+                    color: white;
                     background: #17a2b8;
                   }
                 }
@@ -52,6 +54,7 @@ class Patient extends Component {
               `,
                         paginationOptsFormText: css`
                 &:first-of-type {
+                  padding-bottom: 20px;
                   margin-right: 8px;
                 }
                 &:last-of-type {
@@ -69,7 +72,7 @@ class Patient extends Component {
                     rowsPerPageOption={[5, 10, 15, 20]}
                     initialSort={{ prop: 'name', isAscending: true }}
                     classes={classes}
-                    onRowClick={this.onRowClick}
+                    onRowClick={(data) => this.props.history.push(`/patient/${data._id}`) }
                 />
             </div>
             )
@@ -90,7 +93,6 @@ class Patient extends Component {
     }
 
     render() {
-        console.log(this.state.patients)
         const seo = {
             title: "Prescription : patients",
             description:
@@ -114,12 +116,14 @@ class Patient extends Component {
                 />
                 {/*<Breadcrumbs title="About" description="Who we are " />*/}
 
-                <div className="container mt-3">
+                <div className="container-fluid mt-3">
                     <div className="section">
                         <h4 className="text-center">
                             <b> Patients</b>
                         </h4>
-                        <span>Search Patient</span>
+
+                        <p className="btn btn-primary"><i className="fas fa-plus-square"></i> Add Patient</p>
+                        <p>Search Patient</p>
                         {this.populateTable()}
 
                     </div>
@@ -131,7 +135,7 @@ class Patient extends Component {
 
 
 const mapStateToProps = state => ({
-
+    auth: state.auth,
 });
 
 export default connect(
