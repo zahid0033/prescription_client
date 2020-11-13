@@ -79,26 +79,26 @@ class patientDetails extends Component {
                         </b></h4>
                         <div className="row">
                             <div className="col-md-6">
-                                <div className="card">
+                                <div className="card box-shadow">
                                     <div className="card-header bg-info text-white text-center">
                                         <b>Basic Information</b>
                                     </div>
                                     <div className="card-body">
                                         <div className="row">
-                                            <div className="col-md-4"><b>Name  </b></div>
-                                            <div className="col-md-8"><p>: {this.state.patient.name}</p></div>
+                                            <div className="col-sm-4 col-md-4"><b>Name  </b></div>
+                                            <div className="col-sm-8 col-md-8"><p>: {this.state.patient.name}</p></div>
 
-                                            <div className="col-md-4"><b>Address  </b></div>
-                                            <div className="col-md-8"><p>: {this.state.patient.address}</p></div>
+                                            <div className="col-sm-4 col-md-4 "><b>Address  </b></div>
+                                            <div className="col-sm-8 col-md-8"><p>: {this.state.patient.address}</p></div>
 
-                                            <div className="col-md-4"><b>Mobile  </b></div>
-                                            <div className="col-md-8"><p>: {this.state.patient.mobile}</p></div>
+                                            <div className="col-sm-4 col-md-4"><b>Mobile  </b></div>
+                                            <div className="col-sm-8 col-md-8"><p>: {this.state.patient.mobile}</p></div>
 
-                                            <div className="col-md-4"><b>Address </b></div>
-                                            <div className="col-md-8"><p>: {this.state.patient.address}</p></div>
+                                            <div className="col-sm-4 col-md-4"><b>Address </b></div>
+                                            <div className="col-sm-8 col-md-8"><p>: {this.state.patient.address}</p></div>
 
-                                            <div className="col-md-4"><b>Gender  </b></div>
-                                            <div className="col-md-8"><p>: {this.state.patient.sex}</p></div>
+                                            <div className="col-sm-4 col-md-4"><b>Gender  </b></div>
+                                            <div className="col-sm-8 col-md-8"><p>: {this.state.patient.sex} {this.state.patient.sex === "Male" ? <i className="fas fa-mars text-primary"></i> : <i className="fas fa-venus text-success"></i>}</p></div>
                                         </div>
 
                                     </div>
@@ -106,16 +106,40 @@ class patientDetails extends Component {
                             </div>
 
                             <div className="col-md-6">
-                                <div className="card">
+                                <div className="card box-shadow">
                                     <div className="card-header bg-success text-white text-center">
                                         <b>Admissions</b>
                                     </div>
                                     <div className="card-body">
-                                        {
-                                            admission.length >0 && admission.map((admission,key) =>
-                                                <p>Hey</p>
-                                            )
-                                        }
+                                        <table className="table table-striped">
+                                            <thead className="thead-dark">
+                                                <tr>
+                                                    <th scope="col">Id</th>
+                                                    <th scope="col">Date & Doctor</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {
+                                                    admission.length >0 && admission.map((admission,key) =>
+                                                        <tr>
+                                                            <th key={key}>{key+1}</th>
+                                                            <td>
+                                                                <p><b>Joining Date :</b> {admission.join_date}</p>
+                                                                <p><b>Release Date :</b> {admission.release_date}</p>
+                                                            </td>
+                                                            <td>
+                                                                <p><span className="btn btn-primary"><i className="fas fa-trash-alt"></i> Edit</span></p>
+                                                                <p><span className="btn btn-danger"><i className="fas fa-trash-alt"></i> Delete</span></p>
+                                                            </td>
+                                                        </tr>
+                                                    )
+                                                }
+                                            </tbody>
+                                        </table>
+
+                                        <p className="text-center"><span className="btn btn-primary"><i className="fas fa-plus-square"></i> Add More Admission</span></p>
+
                                     </div>
                                 </div>
                             </div>

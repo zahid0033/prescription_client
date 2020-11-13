@@ -4,6 +4,9 @@ body {
   /*font-family: sans-serif;*/
   font-family: "Noto Sans TC", sans-serif;
 }
+.box-shadow{
+    box-shadow: 3px 5px 10px #3a3a3a;
+}
 div {
   transition: all 1 ease;
 }
