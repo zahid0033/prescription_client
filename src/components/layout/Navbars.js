@@ -57,12 +57,11 @@ class Navbars extends Component {
                                 <Nav.Link className="text-white" href="/">Home |</Nav.Link>
                                 <Nav.Link className="text-white" href="/about">About |</Nav.Link>
                                 <Nav.Link className="text-white" href="/patient"><i className="fas fa-user-injured"></i> Patients |</Nav.Link>
-                                <Nav.Link className="text-white" href="#deets"><i className="fas fa-capsules"></i> Drugs |</Nav.Link>
-                                <Nav.Link className="text-white" href="#deets"><i className="fas fa-stethoscope"></i> Encounters |</Nav.Link>
-                                <Nav.Link className="text-white" href="#deets"><i className="fas fa-exclamation-triangle"></i> C/C |</Nav.Link>
+                                <Nav.Link className="text-white" href="/drug"><i className="fas fa-capsules"></i> Drugs |</Nav.Link>
+                                <Nav.Link className="text-white" href="/chiefComplaint"><i className="fas fa-exclamation-triangle"></i> C/C |</Nav.Link>
                                 <Nav.Link className="text-white" href="#deets"><i className="fas fa-heart"></i> O/E |</Nav.Link>
                                 <Nav.Link className="text-white" href="#deets"><i className="fas fa-diagnoses"></i> Diagnosis |</Nav.Link>
-                                <Nav.Link className="text-white" href="#deets"><i className="fas fa-file-medical-alt"></i> Prescription |</Nav.Link>
+                                <Nav.Link className="text-white" href="/advice"><i className="fas fa-file-medical-alt"></i> Advice |</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                         <Nav>

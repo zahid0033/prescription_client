@@ -19,6 +19,11 @@ import Dashboard from "./components/dashboard/Dashboard";
 import ForgotPass from "./components/forgotPass/ForgotPass";
 import Contact from "./components/contact/Contact";
 import ComingSoon from "./components/comingSoon/ComingSoon";
+import ChiefComplaint from "./components/template/chiefComplaint";
+import Advice from "./components/template/advice";
+import Drug from "./components/template/drug";
+import Encounters from "./components/patient/encounters";
+import AddEncounter from "./components/patient/addEncounter";
 
 export default function PathRoute() {
   return (
@@ -35,8 +40,15 @@ export default function PathRoute() {
           <Route exact path="/about" component={About} />
           <Route exact path="/contactus" component={Contact} />
 
+          <Route exact path="/chiefComplaint" component={ChiefComplaint} />
+          <Route exact path="/advice" component={Advice} />
+          <Route exact path="/drug" component={Drug} />
+
+
           <PrivateRoute exact path="/patient" component={Patient} />
           <PrivateRoute exact path="/patient/:id" component={PatientDetails} />
+          <PrivateRoute exact path="/encounter/:patientId/:admissionId" component={Encounters} />
+          <PrivateRoute exact path="/add/encounter/:admissionId" component={AddEncounter} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
 
         </main>

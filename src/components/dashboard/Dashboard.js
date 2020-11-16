@@ -27,13 +27,13 @@ class Dashboard extends Component {
                 {/*</p>*/}
               </h4>
               <Link
-                to="/liveclass"
+                to="/patient"
                 className="btn-flat waves-effect red darken-1 white-text"
               >
-                View All Live Classes
+                View All patients
                 <i className="material-icons left">arrow_forward</i>
               </Link>
-              <p>Heyyy, We are the one who did this.</p>
+              <p>Welcome here.</p>
 
             </div>
           </div>

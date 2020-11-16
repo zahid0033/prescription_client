@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import axios from 'axios';
 import Datatable from 'react-bs-datatable';
 import { css } from 'emotion';
+import moment from "moment";
 
 // import Breadcrumbs from "../layout/Breadcrumbs";
 
@@ -13,7 +14,8 @@ class patientDetails extends Component {
         super();
         this.state = {
             patient : {},
-            admission:[]
+            admission:[],
+            admissionStatus : false
         }
     }
 
@@ -46,9 +48,31 @@ class patientDetails extends Component {
             })
     }
 
+    addAdmission = async () => {
+        this.setState({
+            admissionStatus : true
+        })
+        const data = {
+            doctor_id : this.props.auth.user.id,
+            patient_id: this.props.match.params.id,
+            join_date: Date.now()
+        }
+        await axios.post(`/api/patient/admission/register`,data)
+            .then(res => {
+                this.allAdmission()
+                this.setState({
+                    admissionStatus : false
+                })
+                console.log(res.data)
+            })
+            .catch( error => {
+                console.log(error)
+            })
+    }
+
     render() {
         const {patient,admission} = this.state;
-        console.log("userid",this.state.admission)
+        console.log("userid",moment(admission.join_date).format('DD-MMM-YYYY'))
         const seo = {
             title: "Prescription : patient Details",
             description:
@@ -122,14 +146,15 @@ class patientDetails extends Component {
                                             <tbody>
                                                 {
                                                     admission.length >0 && admission.map((admission,key) =>
-                                                        <tr>
+                                                        <tr key={key}>
                                                             <th key={key}>{key+1}</th>
                                                             <td>
-                                                                <p><b>Joining Date :</b> {admission.join_date}</p>
+                                                                <p><b>Joining Date :</b> { moment(admission.join_date).format('DD-MMM-YYYY') }</p>
                                                                 <p><b>Release Date :</b> {admission.release_date}</p>
+                                                                <p className="text-success"><b>By :</b> {admission.doctor_id.name}</p>
                                                             </td>
                                                             <td>
-                                                                <p><span className="btn btn-primary"><i className="fas fa-trash-alt"></i> Edit</span></p>
+                                                                <p><Link to={`/encounter/${this.props.match.params.id}/${admission._id}`} className={'btn btn-primary'}><i className="fas fa-eye"></i> Select</Link></p>
                                                                 <p><span className="btn btn-danger"><i className="fas fa-trash-alt"></i> Delete</span></p>
                                                             </td>
                                                         </tr>
@@ -138,7 +163,7 @@ class patientDetails extends Component {
                                             </tbody>
                                         </table>
 
-                                        <p className="text-center"><span className="btn btn-primary"><i className="fas fa-plus-square"></i> Add More Admission</span></p>
+                                        <p className="text-center"><span className={`btn btn-primary ${this.state.admissionStatus === true ? 'disabled' : ''}`} onClick={() => this.addAdmission()}><i className="fas fa-plus-square"></i> Add More Admission</span></p>
 
                                     </div>
                                 </div>
